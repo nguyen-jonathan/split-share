@@ -8,3 +8,16 @@ CREATE TABLE "user" (
     "username" VARCHAR (80) UNIQUE NOT NULL,
     "password" VARCHAR (1000) NOT NULL
 );
+
+CREATE TABLE "group" (
+	"id" SERIAL PRIMARY KEY,
+	"name" VARCHAR (32) NOT NULL
+);
+
+CREATE TABLE "expense" (
+	"id" SERIAL PRIMARY KEY,
+	"date" DATE NOT NULL,
+	"amount" INTEGER,
+	"description" VARCHAR (300),
+	"group_id" INTEGER
+);
