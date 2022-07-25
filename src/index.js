@@ -37,10 +37,20 @@ function* fetchGroup() {
 
 // delete expenses
 
+// reducer to store expense
+const expenseTransaction = (state = [], action) => {
+  switch (action.type) {
+    case 'SET_EXPENSE':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 // store for combineReducers
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
-  combineReducers({}),
+  combineReducers({expenseTransaction}),
   // adding sagamiddleware
   applyMiddleware(sagaMiddleware, logger)
 );
