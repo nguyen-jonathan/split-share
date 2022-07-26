@@ -6,7 +6,7 @@ import store from './redux/store';
 
 import App from './components/App/App';
 // import for saga
-import {takeEvery, put} from 'react-saga/effects';
+import {takeEvery, put} from 'redux-saga/effects';
 // import for saga middleware
 import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger';
@@ -49,7 +49,7 @@ const expenseTransaction = (state = [], action) => {
 
 // store for combineReducers
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(
+const storeInstance = createStore(
   combineReducers({expenseTransaction}),
   // adding sagamiddleware
   applyMiddleware(sagaMiddleware, logger)
@@ -59,7 +59,7 @@ const store = createStore(
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={storeInstance}>
     <App />
   </Provider>,
   document.getElementById('react-root')
