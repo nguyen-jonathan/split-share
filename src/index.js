@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 
-import store from './redux/store';
+// import store from './redux/store';
 
 import App from './components/App/App';
 // import for saga
@@ -47,10 +47,20 @@ const expenseTransaction = (state = [], action) => {
   }
 };
 
+// reducer to store new group name
+const newGroup = (state = [], action) => {
+  switch (action.type) {
+    case 'SET_NEW_GROUP':
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
 // store for combineReducers
 const sagaMiddleware = createSagaMiddleware();
-const storeInstance = createStore(
-  combineReducers({expenseTransaction}),
+const store = createStore(
+  combineReducers({expenseTransaction, newGroup}),
   // adding sagamiddleware
   applyMiddleware(sagaMiddleware, logger)
 );
@@ -59,7 +69,7 @@ const storeInstance = createStore(
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
-  <Provider store={storeInstance}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById('react-root')
