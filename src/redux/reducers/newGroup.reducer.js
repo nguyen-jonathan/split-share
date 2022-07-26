@@ -7,3 +7,5 @@ const newGroup = (state = [], action) => {
       return state;
   }
 };
+
+export default newGroup;
