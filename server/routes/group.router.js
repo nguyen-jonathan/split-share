@@ -21,11 +21,11 @@ router.get('/group', (req, res) => {
 /**
  * POST route template
  */
-router.post('/group', (req, res) => {
+router.post('/', (req, res) => {
   // POST route code here
-  const value = [req.body.name];
+  // const value = [req.body.name];
   pool
-    .query(`INSERT INTO "group" ("name") VALUES ($1);`, value)
+    .query(`INSERT INTO "group" ("name") VALUES ($1) RETURNING "id";`)
     .then((result) => {
       res.sendStatus(200);
     })
