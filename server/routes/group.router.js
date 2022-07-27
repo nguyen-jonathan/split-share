@@ -21,7 +21,7 @@ router.get('/group', (req, res) => {
 /**
  * POST route template
  */
-router.post('/', (req, res) => {
+router.post('/group', (req, res) => {
   // POST route code here
   // const value = [req.body.name];
   pool

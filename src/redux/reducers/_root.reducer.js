@@ -4,6 +4,7 @@ import user from './user.reducer';
 // import additional reducer
 import newGroup from './newGroup.reducer';
 import transaction from './transaction.reducer';
+import fetchAllGroup from './fetchAllGroup.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   // adding additional reducers created
   newGroup,
   transaction,
+  fetchAllGroup,
 });
 
 export default rootReducer;

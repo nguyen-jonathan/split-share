@@ -10,9 +10,9 @@ function AddGroup() {
 
   const [newGroupName, setGroupName] = useState('');
 
-  useEffect(() => {
-    dispatch({type: 'GET_NEW_GROUP'});
-  }, []);
+  //   useEffect(() => {
+  //     dispatch({type: 'GET_NEW_GROUP'});
+  //   }, []);
 
   // Save button to gather and save input data
   const handleClickSave = () => {
@@ -35,7 +35,12 @@ function AddGroup() {
   return (
     <div>
       <p>Start a new group</p>
-      <input type="text" placeholder="Group Name" />
+      <input
+        type="text"
+        placeholder="Group Name"
+        value={newGroupName}
+        onChange={(event) => setGroupName(event.target.value)}
+      />
       <button onClick={handleClickSave}>Save</button>
       <button onClick={() => history.push('/user')}>Cancel</button>
     </div>
