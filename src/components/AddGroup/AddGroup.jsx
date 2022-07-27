@@ -27,6 +27,8 @@ function AddGroup() {
     } else {
       alert('error in saving');
     }
+    console.log('adding new group');
+    history.push('/info');
   };
   // Cancel button to return to home page
   //   const handleClickCancel = () => {
