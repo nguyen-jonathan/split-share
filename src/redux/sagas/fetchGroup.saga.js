@@ -2,7 +2,7 @@ import axios from 'axios';
 import {takeLatest, put} from 'redux-saga/effects';
 
 function* fetchGroupSaga() {
-  yield takeLatest('GET_GROUP_SAGA', getGroup);
+  yield takeLatest('GET_GROUP_SAGA', fetchGroup);
 }
 
 function* fetchGroup() {

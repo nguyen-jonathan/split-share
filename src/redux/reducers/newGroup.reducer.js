@@ -1,7 +1,7 @@
 // reducer to store new group name
 const newGroup = (state = [], action) => {
   switch (action.type) {
-    case 'SET_NEW_GROUP':
+    case 'POST_GROUP':
       return action.payload;
     default:
       return state;
