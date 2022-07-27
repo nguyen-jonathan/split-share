@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, Stack} from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
+import {Link} from 'react-router-dom';
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -8,24 +9,17 @@ import Container from 'react-bootstrap/Container';
 // or even care what the redux state is
 
 function Dashboard() {
-  const handleClickExpense = () => {
-    alert('adding expense');
-  };
-  const handleClickGroup = () => {
-    alert('adding group');
-  };
-
   return (
     <Container className="my-4">
       <Stack direction="horizontal" gap="2" className="mb-4">
         <h2 className="me-auto">Dashboard</h2>
         <h4 className="mx-auto">Total Balance</h4>
-        <Button variant="primary" onClick={handleClickExpense}>
-          Add Expense
-        </Button>
-        <Button variant="primary" onClick={handleClickGroup}>
-          Add Group
-        </Button>
+        <Link to="/expense">
+          <Button variant="primary">Add Expense</Button>
+        </Link>
+        <Link to="/group">
+          <Button variant="primary">Add Group</Button>
+        </Link>
       </Stack>
       {/* <div
         style={{

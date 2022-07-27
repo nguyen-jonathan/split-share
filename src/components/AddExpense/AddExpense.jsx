@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 
-function AddGroup() {
+function AddExpense() {
   console.log('in AddGroup');
   const dispatch = useDispatch();
   const history = useHistory();
@@ -46,4 +46,4 @@ function AddGroup() {
     </div>
   );
 }
-export default AddGroup;
+export default AddExpense;
