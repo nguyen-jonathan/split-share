@@ -8,7 +8,7 @@ function Transactions() {
   const exp = useSelector((store) => store.transaction);
   let {id} = useParams();
   useEffect(() => {
-    dispatch({type: 'CONT_TRANSACTION', payload: id});
+    dispatch({type: 'TRANSACTION', payload: id});
   });
   console.log('in Transaction');
   return (

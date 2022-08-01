@@ -5,7 +5,7 @@ import user from './user.reducer';
 import newGroup from './newGroup.reducer';
 import transaction from './transaction.reducer';
 import fetchAllGroup from './fetchAllGroup.reducer';
-import allTransaction from './allTransaction.reducer/allTransaction';
+import allTransaction from './allTransaction.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
