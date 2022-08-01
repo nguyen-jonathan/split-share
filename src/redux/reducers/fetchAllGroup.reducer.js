@@ -1,4 +1,4 @@
-const group = (state = [], action) => {
+const groups = (state = [], action) => {
   switch (action.type) {
     case 'SET_GROUP':
       return action.payload;
@@ -6,4 +6,4 @@ const group = (state = [], action) => {
       return state;
   }
 };
-export default group;
+export default groups;

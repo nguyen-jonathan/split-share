@@ -3,6 +3,7 @@ import {Button, Stack, Row, Col} from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import {Link} from 'react-router-dom';
 import GroupList from '../GroupList/GroupList';
+import Balance from '../Balance/Balance';
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -17,7 +18,7 @@ function Dashboard() {
           <h2>Dashboard</h2>
         </Col>
         <Col md="auto">
-          <h4>Total Balance</h4>
+          <Balance />
         </Col>
         <Col style={{display: 'flex', justifyContent: 'right'}}>
           <Link to="/expense">

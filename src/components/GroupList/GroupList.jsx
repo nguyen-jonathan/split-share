@@ -1,9 +1,7 @@
 import React, {useEffect} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {useHistory} from 'react-router-dom';
 
 function GroupList() {
-  const history = useHistory();
   const dispatch = useDispatch();
   const groups = useSelector((store) => store.groups);
 
@@ -14,7 +12,9 @@ function GroupList() {
   return (
     <div>
       <h2>Groups</h2>
-      {groups.map}
+      {/* {groups.map((group)=>{
+        return<
+      })} */}
     </div>
   );
 }
