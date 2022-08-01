@@ -2,7 +2,7 @@ import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import {Button, Stack, Form} from 'react-bootstrap';
-import select from 'react-select';
+import {select} from 'react-select';
 
 function AddExpense() {
   console.log('in AddGroup');

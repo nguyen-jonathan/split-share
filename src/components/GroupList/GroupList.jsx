@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux';
 
 function GroupList() {
   const dispatch = useDispatch();
-  const groups = useSelector((store) => store.groups);
+  const groupsStore = useSelector((store) => store.groupsList);
 
   useEffect(() => {
     dispatch({type: 'FETCH_GROUPS'});
@@ -12,9 +12,9 @@ function GroupList() {
   return (
     <div>
       <h2>Groups</h2>
-      {/* {groups.map((group)=>{
-        return<
-      })} */}
+      {groupsStore.map((group) => (
+        <li>{group.name}</li>
+      ))}
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import {Link} from 'react-router-dom';
 import GroupList from '../GroupList/GroupList';
 import Balance from '../Balance/Balance';
+import Transactions from '../Transactions/Transactions';
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -31,14 +32,11 @@ function Dashboard() {
       </Row>
       <Row>
         <Col>
-          <GroupList />
+          {/* <GroupList /> */}
           test
         </Col>
         <Col>
-          <p>show all transactions</p>
-          <p>show all transactions</p>
-          <p>show all transactions</p>
-          <p>show all transactions</p>
+          <Transactions />
         </Col>
         <Col></Col>
       </Row>

@@ -29,6 +29,7 @@ function AddGroup() {
       alert('error in saving');
     }
     console.log('adding new group');
+    alert('Saved new group.');
     history.push('/info');
   };
   // Cancel button to return to home page
