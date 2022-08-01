@@ -26,8 +26,9 @@ router.put('/', (req, res) => {
 /**
  * POST route template
  */
-router.post('/group', (req, res) => {
+router.post('/', (req, res) => {
   // POST route code here
+  console.log(req.body.name);
   const value = [req.body.name];
   pool
     .query(`INSERT INTO "group" ("name") VALUES ($1) RETURNING "id";`, value)
