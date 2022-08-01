@@ -4,7 +4,8 @@ import axios from 'axios';
 // post new group
 function* addGroup(action) {
   try {
-    yield axios.post('/api/group', action.payload);
+    const res = yield axios.post('/api/group', action.payload);
+    console.log(res);
   } catch (err) {
     console.log('error on posting new group');
   }

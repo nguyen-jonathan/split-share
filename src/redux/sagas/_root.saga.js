@@ -1,4 +1,4 @@
-import {all} from 'redux-saga/effects';
+import {all, takeEvery} from 'redux-saga/effects';
 import loginSaga from './login.saga';
 import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
@@ -19,6 +19,6 @@ export default function* rootSaga() {
     userSaga(),
     // other sagas
     fetchAllGroupSaga(),
-    addGroup(),
+    takeEvery('ADD_GROUP', addGroup),
   ]);
 }

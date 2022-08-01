@@ -23,7 +23,7 @@ function AddGroup() {
         name: newGroupName,
       };
       console.log(createGroup);
-      dispatch({type: 'POST_GROUP', payload: createGroup});
+      dispatch({type: 'ADD_GROUP', payload: createGroup});
       setGroupName('');
     } else {
       alert('error in saving');
