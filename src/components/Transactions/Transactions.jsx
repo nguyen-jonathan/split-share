@@ -6,14 +6,15 @@ function Transactions() {
   const dispatch = useDispatch();
   // const history = useHistory();
   const exp = useSelector((store) => store.transaction);
-  let {id} = useParams();
+
   useEffect(() => {
-    dispatch({type: 'CONT_TRANSACTION', payload: id});
-  });
-  console.log('in Transaction');
+    dispatch({type: 'FETCH_TRANSACTION'});
+  }, []);
+
   return (
     <div>
-      {exp.length === 0 ? (
+      <p>Expense: {JSON.stringify(exp)}</p>
+      {/* {exp.length === 0 ? (
         <h1 className="spinner"></h1>
       ) : (
         <div>
@@ -21,7 +22,7 @@ function Transactions() {
           <p>{exp[0].amount}</p>
           <p>{exp[0].description}</p>
         </div>
-      )}
+      )} */}
     </div>
   );
 }

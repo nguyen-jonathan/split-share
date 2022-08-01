@@ -4,6 +4,7 @@ import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import fetchAllGroup from './fetchAllGroup.saga';
 import addGroup from './addGroup.saga';
+import transaction from './transaction.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -17,8 +18,10 @@ export default function* rootSaga() {
     loginSaga(), // login saga is now registered
     registrationSaga(),
     userSaga(),
+    transaction(),
     // other sagas
     takeEvery('ADD_GROUP', addGroup),
     takeEvery('FETCH_GROUPS', fetchAllGroup),
+    takeEvery('FETCH_TRANSACTION', transaction),
   ]);
 }
