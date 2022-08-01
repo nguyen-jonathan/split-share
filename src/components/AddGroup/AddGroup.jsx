@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
+import {Button, Stack, Form} from 'react-bootstrap';
 
 function AddGroup() {
   console.log('in AddGroup');
@@ -35,8 +36,8 @@ function AddGroup() {
   //     setGroupName('');
   //   };
   return (
-    <div>
-      <p>Start a new group</p>
+    <Stack gap="3" className="col-md-2 mx-auto">
+      <label>Start a new group</label>
       <input
         type="text"
         placeholder="Group Name"
@@ -45,7 +46,7 @@ function AddGroup() {
       />
       <button onClick={handleClickSave}>Save</button>
       <button onClick={() => history.push('/info')}>Cancel</button>
-    </div>
+    </Stack>
   );
 }
 export default AddGroup;
