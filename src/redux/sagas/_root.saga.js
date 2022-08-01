@@ -2,7 +2,7 @@ import {all, takeEvery} from 'redux-saga/effects';
 import loginSaga from './login.saga';
 import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
-import fetchAllGroupSaga from './fetchAllGroup.saga';
+import fetchAllGroup from './fetchAllGroup.saga';
 import addGroup from './addGroup.saga';
 
 // rootSaga is the primary saga.
@@ -18,7 +18,7 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     // other sagas
-    fetchAllGroupSaga(),
     takeEvery('ADD_GROUP', addGroup),
+    takeEvery('FETCH_GROUPS', fetchAllGroup),
   ]);
 }

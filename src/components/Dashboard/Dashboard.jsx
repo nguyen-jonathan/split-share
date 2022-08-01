@@ -2,6 +2,7 @@ import React from 'react';
 import {Button, Stack, Row, Col} from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import {Link} from 'react-router-dom';
+import GroupList from '../GroupList/GroupList';
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -14,17 +15,9 @@ function Dashboard() {
       <Row>
         <Col>
           <h2>Dashboard</h2>
-          <p>show all group</p>
-          <p>show all group</p>
-          <p>show all group</p>
-          <p>show all group</p>
         </Col>
         <Col md="auto">
           <h4>Total Balance</h4>
-          <p>show all transactions</p>
-          <p>show all transactions</p>
-          <p>show all transactions</p>
-          <p>show all transactions</p>
         </Col>
         <Col style={{display: 'flex', justifyContent: 'right'}}>
           <Link to="/expense">
@@ -34,6 +27,19 @@ function Dashboard() {
             <Button variant="primary">Add Group</Button>
           </Link>
         </Col>
+      </Row>
+      <Row>
+        <Col>
+          <GroupList />
+          test
+        </Col>
+        <Col>
+          <p>show all transactions</p>
+          <p>show all transactions</p>
+          <p>show all transactions</p>
+          <p>show all transactions</p>
+        </Col>
+        <Col></Col>
       </Row>
       {/* <div
         style={{

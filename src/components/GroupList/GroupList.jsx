@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom';
 function GroupList() {
   const history = useHistory();
   const dispatch = useDispatch();
-  const store = useSelector((store) => store);
+  const groups = useSelector((store) => store.groups);
 
   useEffect(() => {
     dispatch({type: 'FETCH_GROUPS'});
@@ -13,7 +13,8 @@ function GroupList() {
 
   return (
     <div>
-      <h2>{heading}</h2>
+      <h2>Groups</h2>
+      {groups.map}
     </div>
   );
 }
