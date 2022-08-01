@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory, useParams} from 'react-router-dom';
 
-function Transactions() {
+function AllTransactions() {
   const dispatch = useDispatch();
   // const history = useHistory();
   const exp = useSelector((store) => store.transaction);
@@ -26,4 +26,4 @@ function Transactions() {
   );
 }
 
-export default Transactions;
+export default AllTransactions;

@@ -26,8 +26,19 @@ function AddExpense() {
   // Save button to gather and save input data
   const handleClickSave = () => {
     // validate text
+    if (newGroupName !== '') {
+      const createGroup = {
+        name: newGroupName,
+      };
+      console.log(createGroup);
+      dispatch({type: 'ADD_GROUP', payload: createGroup});
+      setGroupName('');
+    } else {
+      alert('error in saving');
+    }
 
     console.log('adding expense');
+    alert('Saved new expense.');
     history.push('/info');
   };
   // Cancel button to return to home page

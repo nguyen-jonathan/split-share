@@ -23,4 +23,8 @@ CREATE TABLE "expense" (
 CREATE TABLE "user_group" (
 	"user_id" INTEGER,
 	"group_id" INTEGER
-);		
+);
+
+INSERT INTO "group" ("name") 
+VALUES ('Personal'), ('Dorian'), ('Japan'), ('Roommate') 
+RETURNING "id";
