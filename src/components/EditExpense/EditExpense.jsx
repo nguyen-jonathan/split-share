@@ -39,6 +39,7 @@ function EditExpense() {
   const handleClickSave = () => {
     // validate text
     const expensePayload = {
+      id: values.id,
       date: editExpenseDate,
       amount: editExpenseAmount,
       description: editExpenseDescription,

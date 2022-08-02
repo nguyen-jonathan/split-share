@@ -8,7 +8,6 @@ import './Transaction.css';
 import {Link} from 'react-router-dom';
 // material UI
 // import {Grid} from '@mui/material';
-
 function Transactions(props) {
   const dispatch = useDispatch();
   const history = useHistory();
@@ -35,6 +34,12 @@ function Transactions(props) {
     history.push(`/edit?${queryString}`);
   }
 
+  function expenseDelete(expense) {
+    console.log('in deleting expense', expense);
+    dispatch({type: 'DELETE_EXPENSE', payload: expense.id});
+    history.push(`/info`);
+  }
+
   useEffect(() => {
     dispatch({type: 'FETCH_TRANSACTION'});
   }, []);
@@ -55,7 +60,7 @@ function Transactions(props) {
           <button onClick={() => expenseEdit(expense)}>Edit</button>
         </div>
         <div>
-          <button>Delete</button>
+          <button onClick={() => expenseDelete(expense)}>Delete</button>
         </div>
       </div>
     );

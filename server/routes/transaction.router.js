@@ -56,7 +56,7 @@ router.put('/edit', (req, res) => {
   ];
   pool
     .query(
-      `UPDATE expense SET date = $1, amount = $2, description = $3, user_id = $4) WHERE id = $5`,
+      `UPDATE expense SET date = $1, amount = $2, description = $3, user_id = $4 WHERE id = $5`,
       values
     )
     .then(() => {
