@@ -28,10 +28,7 @@ function Dashboard() {
         </Col>
       </Row>
       <Row>
-        <Col>
-          {/* <GroupList /> */}
-          test
-        </Col>
+        <Col></Col>
         <Col>
           <Transactions />
         </Col>

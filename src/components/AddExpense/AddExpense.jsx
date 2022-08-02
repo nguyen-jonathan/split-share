@@ -77,9 +77,9 @@ function AddExpense() {
       />
       <button onClick={handleClickSave}>Save</button>
       <button onClick={() => history.push('/info')}>Cancel</button>
-      <p>
+      {/* <p>
         {newExpenseDate} {newExpenseAmount} {newExpenseDescription} {user.id}
-      </p>
+      </p> */}
     </Stack>
   );
 }
