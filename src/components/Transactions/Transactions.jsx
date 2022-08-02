@@ -11,7 +11,9 @@ import {Link} from 'react-router-dom';
 function Transactions(props) {
   const dispatch = useDispatch();
   const history = useHistory();
-  const exp = useSelector((store) => store.transaction);
+  const exp = useSelector((store) => store.transaction).sort((a, b) =>
+    a.id > b.id ? 1 : -1
+  );
 
   // const handleBlur = () => {
   //   var num = parseFloat(this.state.value);
