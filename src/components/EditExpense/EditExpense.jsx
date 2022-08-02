@@ -20,7 +20,7 @@ function EditExpense() {
   // console.log(params.get('id'));
 
   const [editExpenseDate, setExpenseDate] = useState(
-    moment(values.date).format('MM/DD/YYYY')
+    moment(values.date).toISOString().substring(0, 10)
   );
   const [editExpenseAmount, setExpenseAmount] = useState(values.amount);
   const [editExpenseDescription, setExpenseDescription] = useState(
@@ -63,7 +63,7 @@ function EditExpense() {
       <input
         type="date"
         placeholder="Date"
-        value={editExpenseDate}
+        defaultValue={editExpenseDate}
         onChange={(event) => setExpenseDate(event.target.value)}
       />
       <input

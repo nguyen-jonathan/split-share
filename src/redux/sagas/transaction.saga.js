@@ -35,7 +35,7 @@ function* editExpense(action) {
   // PUT
   try {
     const res = yield axios.put(`/api/transaction/edit`, action.payload);
-    yield {type: 'SET_EXPENSE'};
+    yield put({type: 'SET_EXPENSE'});
     console.log('in edit PUT: ', res);
   } catch (err) {
     alert('error editing Expense');
