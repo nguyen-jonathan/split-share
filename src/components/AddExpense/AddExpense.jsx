@@ -60,7 +60,7 @@ function AddExpense() {
       <input
         type="date"
         placeholder="Date"
-        value={newExpenseDate}
+        value={moment(newExpenseDate).format('DD-MM-YYYY')}
         onChange={(event) => setExpenseDate(event.target.value)}
       />
       <input

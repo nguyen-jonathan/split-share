@@ -14,11 +14,22 @@ function Transactions(props) {
   useEffect(() => {
     dispatch({type: 'FETCH_TRANSACTION'});
   }, []);
-
+  let expenses = [];
+  for (let expense of exp) {
+    expenses.push(
+      <div key={expense.id}>
+        <ul>
+          <li>{expense.date}</li>
+          <li>{expense.description}</li>
+          <li>{expense.amount}</li>
+        </ul>
+      </div>
+    );
+  }
   return (
     <div>
       {/* <p>Expense: {JSON.stringify(exp)}</p> */}
-      <li>{exp.description}</li>
+      {expenses}
 
       {/* {exp.length === 0 ? (
         <h1 className="spinner"></h1>
