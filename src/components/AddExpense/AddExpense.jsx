@@ -8,35 +8,29 @@ function AddExpense() {
   console.log('in AddGroup');
   const dispatch = useDispatch();
   const history = useHistory();
-  //   const group = useSelector((store) => store.newGroup);
-
+  const user = useSelector((store) => store.user);
+  // const exp = useSelector((store) => store.expense);
   const [newExpenseDate, setExpenseDate] = useState('');
   const [newExpenseAmount, setExpenseAmount] = useState('');
   const [newExpenseDescription, setExpenseDescription] = useState('');
-  const [newGroupSelect, setGroupSelect] = useState('');
+
   //   useEffect(() => {
   //     dispatch({type: 'GET_NEW_GROUP'});
   //   }, []);
-  const groupList = [
-    {value: 'chocolate', label: 'Chicago Trip'},
-    {value: 'strawberry', label: 'Roommates'},
-    {value: 'vanilla', label: 'test'},
-  ];
 
   // Save button to gather and save input data
   const handleClickSave = () => {
     // validate text
-    if (newGroupName !== '') {
-      const createGroup = {
-        name: newGroupName,
-      };
-      console.log(createGroup);
-      dispatch({type: 'ADD_GROUP', payload: createGroup});
-      setGroupName('');
-    } else {
-      alert('error in saving');
-    }
+    const expensePayload = {
+      date: newExpenseDate,
+      amount: newExpenseAmount,
+      description: newExpenseDescription,
+      user_id: user.id,
+    };
 
+    dispatch({type: 'ADD_EXPENSE', payload: expensePayload});
+    setExpenseDate(''), setExpenseAmount('');
+    setExpenseDescription('');
     console.log('adding expense');
     alert('Saved new expense.');
     history.push('/info');
@@ -66,15 +60,11 @@ function AddExpense() {
         value={newExpenseDescription}
         onChange={(event) => setExpenseDescription(event.target.value)}
       />
-      <select
-        option={groupList}
-        placeholder="Group Name"
-        defaultValue={groupList[0]}
-        value={newGroupSelect}
-        onChange={(event) => setGroupSelect(event.target.value)}
-      />
       <button onClick={handleClickSave}>Save</button>
       <button onClick={() => history.push('/info')}>Cancel</button>
+      <p>
+        {newExpenseDate} {newExpenseAmount} {newExpenseDescription} {user.id}
+      </p>
     </Stack>
   );
 }

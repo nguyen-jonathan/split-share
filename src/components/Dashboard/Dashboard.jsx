@@ -2,7 +2,7 @@ import React from 'react';
 import {Button, Stack, Row, Col} from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import {Link} from 'react-router-dom';
-import GroupList from '../GroupList/GroupList';
+// import GroupList from '../GroupList/GroupList';
 import Balance from '../Balance/Balance';
 import Transactions from '../Transactions/Transactions';
 
@@ -24,9 +24,6 @@ function Dashboard() {
         <Col style={{display: 'flex', justifyContent: 'right'}}>
           <Link to="/expense">
             <Button variant="primary">Add Expense</Button>
-          </Link>
-          <Link to="/group">
-            <Button variant="primary">Add Group</Button>
           </Link>
         </Col>
       </Row>

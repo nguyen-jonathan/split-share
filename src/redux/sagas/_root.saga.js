@@ -5,6 +5,7 @@ import userSaga from './user.saga';
 import fetchAllGroup from './fetchAllGroup.saga';
 import addGroup from './addGroup.saga';
 import transaction from './transaction.saga';
+import expense from './transaction.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -19,6 +20,7 @@ export default function* rootSaga() {
     registrationSaga(),
     userSaga(),
     transaction(),
+    expense(),
     // other sagas
     takeEvery('ADD_GROUP', addGroup),
     takeEvery('FETCH_GROUPS', fetchAllGroup),
