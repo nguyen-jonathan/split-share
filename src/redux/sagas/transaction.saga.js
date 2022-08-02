@@ -15,8 +15,7 @@ function* addExpense(action) {
   console.log('in addExpense', action);
   try {
     yield axios.post(`/api/transaction/expense`, action.payload);
-    console.log('back from POST expense');
-    yield put({type: 'GET_TRANSACTION'});
+    yield put({type: 'SET_EXPENSE'});
   } catch (err) {
     alert('error adding Expense');
   }

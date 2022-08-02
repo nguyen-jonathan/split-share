@@ -8,15 +8,30 @@ function AddExpense() {
   console.log('in AddGroup');
   const dispatch = useDispatch();
   const history = useHistory();
-  const user = useSelector((store) => store.user);
-  // const exp = useSelector((store) => store.expense);
+
   const [newExpenseDate, setExpenseDate] = useState('');
   const [newExpenseAmount, setExpenseAmount] = useState('');
   const [newExpenseDescription, setExpenseDescription] = useState('');
 
-  //   useEffect(() => {
-  //     dispatch({type: 'GET_NEW_GROUP'});
-  //   }, []);
+  const user = useSelector((store) => store.user);
+  // waits for a period of time then resolves
+  // function timeout(ms) {
+  //   return new Promise((resolve) => setTimeout(resolve, ms));
+  // }
+  // useEffect(() => {
+  //   let isCancelled = false;
+  //   const handleChange = async () => {
+  //     await timeout(1000);
+  //     if (!isCancelled) {
+  //       console.log('value updated');
+  //     }
+  //   };
+  //   handleChange();
+  //   // cleanup function when useEffect is called again
+  //   return () => {
+  //     isCancelled = true;
+  //   };
+  // }, []);
 
   // Save button to gather and save input data
   const handleClickSave = () => {

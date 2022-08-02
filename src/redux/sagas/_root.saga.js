@@ -19,11 +19,10 @@ export default function* rootSaga() {
     loginSaga(), // login saga is now registered
     registrationSaga(),
     userSaga(),
-    transaction(),
+    // transaction(),
     expense(),
-    // other sagas
-    takeEvery('ADD_GROUP', addGroup),
-    takeEvery('FETCH_GROUPS', fetchAllGroup),
-    takeEvery('FETCH_TRANSACTION', transaction),
+    // takeEvery('ADD_GROUP', addGroup),
+    // takeEvery('FETCH_GROUPS', fetchAllGroup),
+    // takeEvery('FETCH_TRANSACTION', transaction),
   ]);
 }

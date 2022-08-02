@@ -45,7 +45,6 @@ router.post('/expense', (req, res) => {
 /**
  * DELETE route template
  */
-
 router.delete('/delete', (req, res) => {
   console.log('in router DELETE: ', req.query.id);
   const queryString = `DELETE FROM expense WHERE id=$1;`;
