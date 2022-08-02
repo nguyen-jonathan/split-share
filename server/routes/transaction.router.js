@@ -45,7 +45,7 @@ router.post('/expense', (req, res) => {
 /**
  * UPDATE route template
  */
-router.put('/expense', (req, res) => {
+router.put('/edit', (req, res) => {
   console.log('in router POST', req.body);
   const values = [
     req.body.date,

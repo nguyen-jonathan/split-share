@@ -1,24 +1,39 @@
 import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {useHistory} from 'react-router-dom';
+import {useHistory, useLocation} from 'react-router-dom';
 import {Button, Stack, Form} from 'react-bootstrap';
 import {select} from 'react-select';
+import queryString from 'query-string';
+import moment from 'moment';
 
 function EditExpense() {
   console.log('in Edit expense');
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [editExpenseDate, setExpenseDate] = useState('');
-  const [editExpenseAmount, setExpenseAmount] = useState('');
-  const [editExpenseDescription, setExpenseDescription] = useState('');
+  const {search} = useLocation();
+  const values = queryString.parse(search);
+  console.log(values.id); // "top"
+
+  // const windowUrl = window.location.search;
+  // const params = new URLSearchParams(windowUrl);
+  // console.log(params.get('id'));
+
+  const [editExpenseDate, setExpenseDate] = useState(
+    moment(values.date).format('MM/DD/YYYY')
+  );
+  const [editExpenseAmount, setExpenseAmount] = useState(values.amount);
+  const [editExpenseDescription, setExpenseDescription] = useState(
+    values.description
+  );
 
   const user = useSelector((store) => store.user);
-  const exp = useSelector((store) => store.transaction);
+  // const exp = useSelector((store) => store.edit);
+  // console.log(exp);
 
   useEffect(() => {
     dispatch({type: 'SET_EXPENSE'});
-  });
+  }, []);
 
   // Save button to gather and save input data
   const handleClickSave = () => {

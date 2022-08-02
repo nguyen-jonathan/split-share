@@ -11,7 +11,7 @@ import {Link} from 'react-router-dom';
 
 function Transactions(props) {
   const dispatch = useDispatch();
-  // const history = useHistory();
+  const history = useHistory();
   const exp = useSelector((store) => store.transaction);
 
   // const handleBlur = () => {
@@ -21,7 +21,18 @@ function Transactions(props) {
   // };
   function expenseEdit(expense) {
     console.log('in editExpense', expense);
-    dispatch({type: 'EDIT_TRANSACTION', payload: expense});
+    let queryString =
+      'id=' +
+      expense.id +
+      '&date=' +
+      expense.date +
+      '&amount=' +
+      expense.amount +
+      '&description=' +
+      expense.description;
+    // dispatch({type: 'EDIT_TRANSACTION', payload: expense});
+
+    history.push(`/edit?${queryString}`);
   }
 
   useEffect(() => {
@@ -41,9 +52,7 @@ function Transactions(props) {
           <li>{expense.amount.toFixed(2)}</li>
         </ul>
         <div>
-          <Link to="/edit">
-            <button onClick={() => expenseEdit(expense)}>Edit</button>
-          </Link>
+          <button onClick={() => expenseEdit(expense)}>Edit</button>
         </div>
         <div>
           <button>Delete</button>

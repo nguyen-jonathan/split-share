@@ -1,11 +1,11 @@
 // reducer to store expense
-const transaction = (state = [], action) => {
+const edit = (state = [], action) => {
   switch (action.type) {
-    case 'SET_TRANSACTION':
+    case 'EDIT_TRANSACTION':
       return action.payload;
     default:
       return state;
   }
 };
 
-export default transaction;
+export default edit;
