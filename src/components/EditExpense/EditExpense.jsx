@@ -4,49 +4,36 @@ import {useHistory} from 'react-router-dom';
 import {Button, Stack, Form} from 'react-bootstrap';
 import {select} from 'react-select';
 
-function AddExpense() {
-  console.log('in AddGroup');
+function EditExpense() {
+  console.log('in Edit expense');
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [newExpenseDate, setExpenseDate] = useState('');
-  const [newExpenseAmount, setExpenseAmount] = useState('');
-  const [newExpenseDescription, setExpenseDescription] = useState('');
+  const [editExpenseDate, setExpenseDate] = useState('');
+  const [editExpenseAmount, setExpenseAmount] = useState('');
+  const [editExpenseDescription, setExpenseDescription] = useState('');
 
   const user = useSelector((store) => store.user);
-  // waits for a period of time then resolves
-  // function timeout(ms) {
-  //   return new Promise((resolve) => setTimeout(resolve, ms));
-  // }
-  // useEffect(() => {
-  //   let isCancelled = false;
-  //   const handleChange = async () => {
-  //     await timeout(1000);
-  //     if (!isCancelled) {
-  //       console.log('value updated');
-  //     }
-  //   };
-  //   handleChange();
-  //   // cleanup function when useEffect is called again
-  //   return () => {
-  //     isCancelled = true;
-  //   };
-  // }, []);
+  const exp = useSelector((store) => store.transaction);
+
+  useEffect(() => {
+    dispatch({type: 'SET_EXPENSE'});
+  });
 
   // Save button to gather and save input data
   const handleClickSave = () => {
     // validate text
     const expensePayload = {
-      date: newExpenseDate,
-      amount: newExpenseAmount,
-      description: newExpenseDescription,
+      date: editExpenseDate,
+      amount: editExpenseAmount,
+      description: editExpenseDescription,
       user_id: user.id,
     };
 
-    dispatch({type: 'ADD_EXPENSE', payload: expensePayload});
+    dispatch({type: 'EDIT_EXPENSE', payload: expensePayload});
     setExpenseDate(''), setExpenseAmount('');
     setExpenseDescription('');
-    console.log('adding expense');
+    console.log('editing expense');
     alert('Saved new expense.');
     history.push('/info');
   };
@@ -57,32 +44,29 @@ function AddExpense() {
   //   };
   return (
     <Stack gap="3" className="col-md-2 mx-auto">
-      <p>Enter a new expense</p>
+      <p>Edit the expense</p>
       <input
         type="date"
         placeholder="Date"
-        value={newExpenseDate}
+        value={editExpenseDate}
         onChange={(event) => setExpenseDate(event.target.value)}
       />
       <input
         type="number"
         placeholder="Amount"
-        value={newExpenseAmount}
+        value={editExpenseAmount}
         // onBlur={handleBlur}
         onChange={(event) => setExpenseAmount(event.target.value)}
       />
       <input
         type="text"
         placeholder="Description"
-        value={newExpenseDescription}
+        value={editExpenseDescription}
         onChange={(event) => setExpenseDescription(event.target.value)}
       />
       <button onClick={handleClickSave}>Save</button>
       <button onClick={() => history.push('/info')}>Cancel</button>
-      {/* <p>
-        {newExpenseDate} {newExpenseAmount} {newExpenseDescription} {user.id}
-      </p> */}
     </Stack>
   );
 }
-export default AddExpense;
+export default EditExpense;

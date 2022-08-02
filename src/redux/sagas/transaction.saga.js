@@ -21,9 +21,21 @@ function* addExpense(action) {
   }
 }
 
+function* editExpense(action) {
+  // PUT
+  try {
+    const res = yield axios.put(`/api/transaction/expense`, action.payload);
+    yield put({type: 'SET_EXPENSE'});
+    console.log('in edit PUT: ', res);
+  } catch (err) {
+    alert('error adding Expense');
+  }
+}
+
 function* transactionSaga() {
   yield takeLatest('FETCH_TRANSACTION', getTransaction);
   yield takeLatest('ADD_EXPENSE', addExpense);
+  yield takeLatest('EDIT_EXPENSE', editExpense);
 }
 
 export default transactionSaga;

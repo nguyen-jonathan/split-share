@@ -43,6 +43,31 @@ router.post('/expense', (req, res) => {
     });
 });
 /**
+ * UPDATE route template
+ */
+router.put('/expense', (req, res) => {
+  console.log('in router POST', req.body);
+  const values = [
+    req.body.date,
+    req.body.amount,
+    req.body.description,
+    req.body.user_id,
+    req.body.id,
+  ];
+  pool
+    .query(
+      `UPDATE expense SET date = $1, amount = $2, description = $3, user_id = $4) WHERE id = $5`,
+      values
+    )
+    .then(() => {
+      res.sendStatus(200);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+/**
  * DELETE route template
  */
 router.delete('/delete', (req, res) => {
