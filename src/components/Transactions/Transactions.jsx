@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useHistory, useParams} from 'react-router-dom';
 import AddExpense from '../AddExpense/AddExpense';
 import Moment from 'react-moment';
+import {Button} from 'react-bootstrap';
 import './Transaction.css';
 
 import {Link} from 'react-router-dom';
@@ -49,7 +50,7 @@ function Transactions(props) {
   let expenses = [];
   for (let expense of exp) {
     expenses.push(
-      <div key={expense.id}>
+      <div class="container" key={expense.id}>
         <ul>
           <li>
             <Moment format="MM/DD/YYYY">{expense.date}</Moment>
@@ -58,11 +59,19 @@ function Transactions(props) {
           <li>{expense.description}</li>
           <li>{expense.amount.toFixed(2)}</li>
         </ul>
-        <div>
-          <button onClick={() => expenseEdit(expense)}>Edit</button>
-        </div>
-        <div>
-          <button onClick={() => expenseDelete(expense)}>Delete</button>
+        <div class="row">
+          <Button
+            class="btn btn-primary btn-sm"
+            onClick={() => expenseEdit(expense)}>
+            Edit
+          </Button>
+          <div class="column">
+            <Button
+              class="btn btn-primary btn-sm"
+              onClick={() => expenseDelete(expense)}>
+              Delete
+            </Button>
+          </div>
         </div>
       </div>
     );
