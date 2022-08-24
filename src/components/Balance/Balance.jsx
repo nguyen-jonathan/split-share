@@ -22,7 +22,9 @@ function Balance() {
   return (
     <div>
       <h2>Total Balance:</h2>
-      <h3>{totalBalance}</h3>
+      <h3>
+        $ {totalBalance.toLocaleString(undefined, {maximumFractionDigits: 2})}
+      </h3>
     </div>
   );
 }

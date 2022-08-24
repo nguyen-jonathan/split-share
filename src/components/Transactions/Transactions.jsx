@@ -57,7 +57,11 @@ function Transactions(props) {
           </li>
           {/* <li>{expense.date}</li> */}
           <li>{expense.description}</li>
-          <li>{expense.amount.toFixed(2)}</li>
+          <li>
+            {expense.amount.toLocaleString(undefined, {
+              maximumFractionDigits: 2,
+            })}
+          </li>
         </ul>
         <div class="row">
           <Button
