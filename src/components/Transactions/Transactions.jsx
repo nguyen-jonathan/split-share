@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {useHistory, useParams} from 'react-router-dom';
 import AddExpense from '../AddExpense/AddExpense';
 import Moment from 'react-moment';
-import {Button} from 'react-bootstrap';
+import {Button, Card} from 'react-bootstrap';
 import './Transaction.css';
 
 import {Link} from 'react-router-dom';
@@ -50,34 +50,33 @@ function Transactions(props) {
   let expenses = [];
   for (let expense of exp) {
     expenses.push(
-      <div class="container" key={expense.id}>
-        <ul>
-          <li>
+      <Card style={{width: '18rem'}}>
+        <Card.Body key={expense.id}>
+          <Card.Title>{expense.description}</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted">
             <Moment format="MM/DD/YYYY">{expense.date}</Moment>
-          </li>
-          {/* <li>{expense.date}</li> */}
-          <li>{expense.description}</li>
-          <li>
+          </Card.Subtitle>
+
+          <Card.Text>
+            ${' '}
             {expense.amount.toLocaleString(undefined, {
               maximumFractionDigits: 2,
             })}
-          </li>
-        </ul>
-        <div class="row">
+          </Card.Text>
+
           <Button
-            class="btn btn-primary btn-sm"
+            class="btn btn-secondary btn-sm"
             onClick={() => expenseEdit(expense)}>
             Edit
           </Button>
-          <div class="column">
-            <Button
-              class="btn btn-primary btn-sm"
-              onClick={() => expenseDelete(expense)}>
-              Delete
-            </Button>
-          </div>
-        </div>
-      </div>
+          {'  '}
+          <Button
+            class="btn btn-danger btn-sm"
+            onClick={() => expenseDelete(expense)}>
+            Delete
+          </Button>
+        </Card.Body>
+      </Card>
     );
   }
   return (

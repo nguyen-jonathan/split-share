@@ -20,19 +20,14 @@ function Dashboard() {
         </Col>
         <Col md="auto">
           <Balance />
+
+          <Transactions />
         </Col>
         <Col style={{display: 'flex', justifyContent: 'right'}}>
           <Link to="/expense">
             <Button variant="primary">Add Expense</Button>
           </Link>
         </Col>
-      </Row>
-      <Row>
-        <Col></Col>
-        <Col>
-          <Transactions />
-        </Col>
-        <Col></Col>
       </Row>
       {/* <div
         style={{
