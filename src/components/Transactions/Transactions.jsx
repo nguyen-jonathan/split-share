@@ -65,13 +65,13 @@ function Transactions(props) {
           </Card.Text>
 
           <Button
-            class="btn btn-secondary btn-sm"
+            className="btn btn-secondary btn-sm"
             onClick={() => expenseEdit(expense)}>
             Edit
           </Button>
           {'  '}
           <Button
-            class="btn btn-danger btn-sm"
+            className="btn btn-danger btn-sm"
             onClick={() => expenseDelete(expense)}>
             Delete
           </Button>

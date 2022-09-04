@@ -3,7 +3,7 @@ ul {
   padding-right: 30px;
 }
 .container {
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   width: 100%;
 }

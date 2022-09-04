@@ -20,7 +20,6 @@ function Dashboard() {
         </Col>
         <Col md="auto">
           <Balance />
-
           <Transactions />
         </Col>
         <Col style={{display: 'flex', justifyContent: 'right'}}>
@@ -29,6 +28,13 @@ function Dashboard() {
           </Link>
         </Col>
       </Row>
+      {/* <Row>
+        <Col></Col>
+        <Col>
+          <Transactions />
+        </Col>
+        <Col></Col>
+      </Row> */}
       {/* <div
         style={{
           display: 'grid',
