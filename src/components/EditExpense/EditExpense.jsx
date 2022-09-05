@@ -5,6 +5,7 @@ import {Button, Stack, Form} from 'react-bootstrap';
 import {select} from 'react-select';
 import queryString from 'query-string';
 import moment from 'moment';
+import './EditExpense.css';
 
 function EditExpense() {
   console.log('in Edit expense');
@@ -59,29 +60,49 @@ function EditExpense() {
   //     setGroupName('');
   //   };
   return (
-    <Stack gap="3" className="col-md-2 mx-auto">
-      <p>Edit the expense</p>
-      <input
-        type="date"
-        placeholder="Date"
-        defaultValue={editExpenseDate}
-        onChange={(event) => setExpenseDate(event.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Amount"
-        value={editExpenseAmount}
-        // onBlur={handleBlur}
-        onChange={(event) => setExpenseAmount(event.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Description"
-        value={editExpenseDescription}
-        onChange={(event) => setExpenseDescription(event.target.value)}
-      />
-      <button onClick={handleClickSave}>Save</button>
-      <button onClick={() => history.push('/info')}>Cancel</button>
+    <Stack gap="3" className="col-md-2 mx-auto mt-4">
+      <div className="bg-light border">
+        <form>
+          <h4>Edit the expense:</h4>
+          <label>
+            <input
+              type="date"
+              placeholder="Date"
+              defaultValue={editExpenseDate}
+              onChange={(event) => setExpenseDate(event.target.value)}
+            />
+          </label>
+          <label>
+            <input
+              type="number"
+              placeholder="Amount"
+              value={editExpenseAmount}
+              // onBlur={handleBlur}
+              onChange={(event) => setExpenseAmount(event.target.value)}
+            />
+          </label>
+          <label>
+            <input
+              type="text"
+              placeholder="Description"
+              value={editExpenseDescription}
+              onChange={(event) => setExpenseDescription(event.target.value)}
+            />
+          </label>
+          <div className="buttons">
+            <Button
+              className="btn btn-success btn-sm"
+              onClick={handleClickSave}>
+              Save
+            </Button>{' '}
+            <Button
+              className="btn btn-secondary btn-sm"
+              onClick={() => history.push('/info')}>
+              Cancel
+            </Button>
+          </div>
+        </form>
+      </div>
     </Stack>
   );
 }

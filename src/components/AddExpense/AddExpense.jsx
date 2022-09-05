@@ -46,12 +46,15 @@ function AddExpense() {
 
     dispatch({type: 'ADD_EXPENSE', payload: expensePayload});
     setExpenseDate(''), setExpenseAmount('');
-    setExpenseDescription('');
+    setExpenseDescription(''), [];
     console.log('adding expense');
     alert('Saved new expense.');
     history.push('/info');
   };
 
+  // useEffect(() => {
+  //   handleClickSave();
+  // }, []);
   // Cancel button to return to home page
   //   const handleClickCancel = () => {
   //     setGroupName('');
@@ -80,7 +83,6 @@ function AddExpense() {
               className="amount"
             />
           </label>
-          <br />
           <label>
             <input
               type="text"
@@ -92,8 +94,16 @@ function AddExpense() {
           </label>
 
           <div className="buttons">
-            <button onClick={handleClickSave}>Save</button>
-            <button onClick={() => history.push('/info')}>Cancel</button>
+            <Button
+              className="btn btn-success btn-sm"
+              onClick={handleClickSave}>
+              Save
+            </Button>{' '}
+            <Button
+              className="btn btn-secondary btn-sm"
+              onClick={() => history.push('/info')}>
+              Cancel
+            </Button>
             {/* <p>
         {newExpenseDate} {newExpenseAmount} {newExpenseDescription} {user.id}
       </p> */}

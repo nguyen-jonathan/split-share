@@ -47,6 +47,10 @@ function Transactions(props) {
     dispatch({type: 'FETCH_TRANSACTION'});
   }, []);
 
+  // const toggleTransaction = () => {
+  //   setCharge(!charge);
+  // };
+
   let expenses = [];
   for (let expense of exp) {
     expenses.push(
