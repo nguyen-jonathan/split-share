@@ -57,33 +57,49 @@ function AddExpense() {
   //     setGroupName('');
   //   };
   return (
-    <Stack gap="3" className="col-md-2 mx-auto">
-      <h4>Add an expense:</h4>
+    <Stack gap="3" className="col-md-2 mx-auto mt-4">
+      <div className="bg-light border">
+        <form>
+          <h4>Add an expense:</h4>
 
-      <input
-        type="date"
-        placeholder="Date"
-        value={newExpenseDate}
-        onChange={(event) => setExpenseDate(event.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Amount"
-        value={newExpenseAmount}
-        // onBlur={handleBlur}
-        onChange={(event) => setExpenseAmount(event.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Description"
-        value={newExpenseDescription}
-        onChange={(event) => setExpenseDescription(event.target.value)}
-      />
-      <button onClick={handleClickSave}>Save</button>
-      <button onClick={() => history.push('/info')}>Cancel</button>
-      {/* <p>
+          <label>
+            <input
+              type="date"
+              placeholder="Date"
+              value={newExpenseDate}
+              onChange={(event) => setExpenseDate(event.target.value)}
+            />
+          </label>
+          <label>
+            <input
+              type="number"
+              placeholder="$0.00"
+              value={newExpenseAmount}
+              // onBlur={handleBlur}
+              onChange={(event) => setExpenseAmount(event.target.value)}
+              className="amount"
+            />
+          </label>
+          <br />
+          <label>
+            <input
+              type="text"
+              placeholder="Description"
+              value={newExpenseDescription}
+              onChange={(event) => setExpenseDescription(event.target.value)}
+              className="description"
+            />
+          </label>
+
+          <div className="buttons">
+            <button onClick={handleClickSave}>Save</button>
+            <button onClick={() => history.push('/info')}>Cancel</button>
+            {/* <p>
         {newExpenseDate} {newExpenseAmount} {newExpenseDescription} {user.id}
       </p> */}
+          </div>
+        </form>
+      </div>
     </Stack>
   );
 }
