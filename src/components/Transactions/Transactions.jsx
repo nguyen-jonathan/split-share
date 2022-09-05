@@ -50,13 +50,12 @@ function Transactions(props) {
   let expenses = [];
   for (let expense of exp) {
     expenses.push(
-      <Card style={{width: '18rem'}}>
-        <Card.Body key={expense.id}>
+      <Card style={{width: '20rem'}}>
+        <Card.Body key={expense.id} className="expenseDiv">
           <Card.Title>{expense.description}</Card.Title>
           <Card.Subtitle className="mb-2 text-muted">
             <Moment format="MM/DD/YYYY">{expense.date}</Moment>
           </Card.Subtitle>
-
           <Card.Text>
             ${' '}
             {expense.amount.toLocaleString(undefined, {
