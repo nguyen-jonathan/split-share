@@ -1,8 +1,9 @@
 import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom';
-import {Button, Stack, Form} from 'react-bootstrap';
+import {Button, Stack, Form, Card} from 'react-bootstrap';
 import {select} from 'react-select';
+import './AddExpense.css';
 
 function AddExpense() {
   console.log('in AddGroup');
@@ -57,7 +58,8 @@ function AddExpense() {
   //   };
   return (
     <Stack gap="3" className="col-md-2 mx-auto">
-      <p>Enter a new expense</p>
+      <h4>Add an expense:</h4>
+
       <input
         type="date"
         placeholder="Date"

@@ -14,6 +14,12 @@ function Balance() {
     return temp;
   }
 
+  // const numberFormat = (totalBalance) =>
+  //   new Intl.NumberFormat('en-IN', {
+  //     style: 'currency',
+  //     currentcy: 'INR',
+  //   }).format(value);
+
   useEffect(() => {
     dispatch({type: 'FETCH_TRANSACTION'});
     setTotalBalance(calculateTotal(exp));
@@ -21,7 +27,7 @@ function Balance() {
 
   return (
     <div>
-      <h2>Total Balance:</h2>
+      <h2>Total Spending:</h2>
       <h3>
         $ {totalBalance.toLocaleString(undefined, {maximumFractionDigits: 2})}
       </h3>
