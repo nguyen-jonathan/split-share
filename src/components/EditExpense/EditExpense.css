@@ -1,0 +1,37 @@
+h4 {
+  margin: 5px;
+  padding-top: 20px;
+  padding-left: 15px;
+}
+
+label,
+input {
+  display: block;
+}
+
+label {
+  margin: 10px;
+  /* padding: 10px; */
+}
+
+.amount {
+  width: 6rem;
+}
+
+.description {
+  flex-grow: 1;
+  margin-bottom: 10px;
+}
+.buttons {
+  margin-left: 145px;
+  margin-bottom: 20px;
+  /* position: absolute; */
+  /* justify-content: left; */
+  /* top: 50%; */
+  /* -ms-transform: translateY(-50%);
+    transform: translateY(-50%); */
+}
+form {
+  margin: 10px;
+  /* padding: 5px; */
+}

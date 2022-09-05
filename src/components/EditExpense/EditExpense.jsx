@@ -75,7 +75,7 @@ function EditExpense() {
           <label>
             <input
               type="number"
-              placeholder="Amount"
+              placeholder="$0.00"
               value={editExpenseAmount}
               // onBlur={handleBlur}
               onChange={(event) => setExpenseAmount(event.target.value)}
