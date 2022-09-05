@@ -63,7 +63,7 @@ function Transactions(props) {
           <Card.Text>
             ${' '}
             {expense.amount.toLocaleString(undefined, {
-              maximumFractionDigits: 2,
+              minimumFractionDigits: 2,
             })}
           </Card.Text>
 

@@ -23,13 +23,13 @@ function Balance() {
   useEffect(() => {
     dispatch({type: 'FETCH_TRANSACTION'});
     setTotalBalance(calculateTotal(exp));
-  }, []);
+  }, [exp]);
 
   return (
     <div>
       <h2>Total Spending:</h2>
       <h3>
-        $ {totalBalance.toLocaleString(undefined, {maximumFractionDigits: 2})}
+        $ {totalBalance.toLocaleString(undefined, {minimumFractionDigits: 2})}
       </h3>
     </div>
   );
