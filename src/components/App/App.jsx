@@ -18,7 +18,6 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import AddGroup from '../AddGroup/AddGroup';
 import AddExpense from '../AddExpense/AddExpense';
 import EditExpense from '../EditExpense/EditExpense';
-// import AddIncome from '../AddIncome/AddIncome';
 
 import './App.css';
 
@@ -63,12 +62,6 @@ function App() {
             path="/expense">
             <AddExpense />
           </ProtectedRoute>
-          {/* <ProtectedRoute
-            // logged in shows AddExpense else shows LoginPage
-            exact
-            path="/income">
-            <AddIncome />
-          </ProtectedRoute> */}
           <ProtectedRoute
             // logged in shows AddExpense else shows LoginPage
             exact
