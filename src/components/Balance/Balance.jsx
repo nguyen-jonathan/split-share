@@ -33,12 +33,12 @@ function Balance() {
           $ {totalBalance.toLocaleString(undefined, {minimumFractionDigits: 2})}
         </h3>
       </div>
-      <div>
+      {/* <div>
         <h2>Total Expense:</h2>
         <h3>
           $ {totalBalance.toLocaleString(undefined, {minimumFractionDigits: 2})}
         </h3>
-      </div>
+      </div> */}
     </div>
   );
 }
