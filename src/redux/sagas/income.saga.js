@@ -42,7 +42,7 @@ function* deleteIncome(action) {
 }
 
 function* incomeSaga() {
-  yield takeLatest('FETCH_TRANSACTION', getIncome);
+  yield takeLatest('FETCH_INCOME', getIncome);
   yield takeLatest('ADD_INCOME', addIncome);
   yield takeLatest('EDIT_INCOME', editIncome);
   yield takeLatest('DELETE_INCOME', deleteIncome);

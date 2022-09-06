@@ -47,6 +47,9 @@ function Transactions(props) {
     dispatch({type: 'FETCH_TRANSACTION'});
   }, []);
 
+  useEffect(() => {
+    dispatch({type: 'FETCH_INCOME'});
+  }, []);
   // const toggleTransaction = () => {
   //   setCharge(!charge);
   // };

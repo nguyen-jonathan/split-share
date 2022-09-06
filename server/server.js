@@ -11,7 +11,7 @@ const passport = require('./strategies/user.strategy');
 const userRouter = require('./routes/user.router');
 const groupRouter = require('./routes/group.router');
 const transactionRouter = require('./routes/transaction.router');
-const incomeRouter = require('./routes/income.router');
+// const incomeRouter = require('./routes/income.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -28,7 +28,7 @@ app.use(passport.session());
 app.use('/api/user', userRouter);
 app.use('/api/group', groupRouter);
 app.use('/api/transaction', transactionRouter);
-app.use('/api/income', incomeRouter);
+// app.use('/api/income', incomeRouter);
 
 // Serve static files
 app.use(express.static('build'));
