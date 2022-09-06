@@ -18,7 +18,7 @@ function Dashboard() {
         <Col>
           <h2>Dashboard</h2>
         </Col>
-        <Col md="auto" style={{float: 'center'}}>
+        <Col md="auto">
           <Balance />
           <Transactions />
         </Col>
@@ -27,8 +27,8 @@ function Dashboard() {
             <Button
               variant="primary"
               id="add-expense-button"
-              style={{float: 'right'}}>
-              Add Expense
+              style={{float: 'left'}}>
+              Add Transaction
             </Button>
           </Link>
         </Col>

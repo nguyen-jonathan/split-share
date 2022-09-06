@@ -22,8 +22,8 @@ label {
   flex-grow: 1;
   margin-bottom: 10px;
 }
-.buttons {
-  margin-left: 145px;
+.buttons-div {
+  /* margin-left: 130px; */
   margin-bottom: 20px;
   /* position: absolute; */
   /* justify-content: left; */

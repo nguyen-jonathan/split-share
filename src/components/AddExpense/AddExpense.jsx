@@ -63,9 +63,10 @@ function AddExpense() {
     <Stack gap="3" className="col-md-2 mx-auto mt-4">
       <div className="bg-light border">
         <form>
-          <h4>Add an expense:</h4>
+          <h4>Add Transaction:</h4>
 
           <label>
+            Date
             <input
               type="date"
               placeholder="Date"
@@ -82,6 +83,7 @@ function AddExpense() {
               onChange={(event) => setExpenseAmount(event.target.value)}
               className="amount"
             />
+            + for income, - for expense
           </label>
           <label>
             <input
@@ -93,7 +95,7 @@ function AddExpense() {
             />
           </label>
 
-          <div className="buttons">
+          <div className="buttons-div" style={{float: 'right'}}>
             <Button
               className="btn btn-success btn-sm"
               // id="testID"
