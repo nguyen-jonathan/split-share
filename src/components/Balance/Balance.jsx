@@ -27,10 +27,18 @@ function Balance() {
 
   return (
     <div>
-      <h2>Total Spending:</h2>
-      <h3>
-        $ {totalBalance.toLocaleString(undefined, {minimumFractionDigits: 2})}
-      </h3>
+      <div>
+        <h2>Total Income:</h2>
+        <h3>
+          $ {totalBalance.toLocaleString(undefined, {minimumFractionDigits: 2})}
+        </h3>
+      </div>
+      <div>
+        <h2>Total Expense:</h2>
+        <h3>
+          $ {totalBalance.toLocaleString(undefined, {minimumFractionDigits: 2})}
+        </h3>
+      </div>
     </div>
   );
 }

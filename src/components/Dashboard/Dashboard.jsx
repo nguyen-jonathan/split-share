@@ -26,6 +26,10 @@ function Dashboard() {
           <Link to="/expense">
             <Button variant="primary">Add Expense</Button>
           </Link>
+          {'  '}
+          <Link to="/income">
+            <Button variant="primary">Add Income</Button>
+          </Link>
         </Col>
       </Row>
       {/* <Row>
