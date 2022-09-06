@@ -18,13 +18,18 @@ function Dashboard() {
         <Col>
           <h2>Dashboard</h2>
         </Col>
-        <Col md="auto">
+        <Col md="auto" style={{float: 'center'}}>
           <Balance />
           <Transactions />
         </Col>
-        <Col style={{display: 'flex', justifyContent: 'right'}}>
+        <Col>
           <Link to="/expense">
-            <Button variant="primary">Add Expense</Button>
+            <Button
+              variant="primary"
+              id="add-expense-button"
+              style={{float: 'right'}}>
+              Add Expense
+            </Button>
           </Link>
         </Col>
       </Row>

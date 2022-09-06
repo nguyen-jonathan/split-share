@@ -21,7 +21,7 @@ function Balance() {
   //   }).format(value);
 
   useEffect(() => {
-    dispatch({type: 'FETCH_TRANSACTION'});
+    // dispatch({type: 'FETCH_TRANSACTION'});
     setTotalBalance(calculateTotal(exp));
   }, [exp]);
 

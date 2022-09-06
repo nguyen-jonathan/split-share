@@ -96,6 +96,7 @@ function AddExpense() {
           <div className="buttons">
             <Button
               className="btn btn-success btn-sm"
+              // id="testID"
               onClick={handleClickSave}>
               Save
             </Button>{' '}
@@ -104,9 +105,6 @@ function AddExpense() {
               onClick={() => history.push('/info')}>
               Cancel
             </Button>
-            {/* <p>
-        {newExpenseDate} {newExpenseAmount} {newExpenseDescription} {user.id}
-      </p> */}
           </div>
         </form>
       </div>

@@ -3,8 +3,8 @@ import {takeLatest, put} from 'redux-saga/effects';
 
 function* getTransaction(action) {
   try {
-    const res = yield axios.get(`/api/transaction`);
-    console.log('back from GET transaction', res.data);
+    const res = yield axios.get(`/api/transaction/`);
+    // console.log('back from GET transaction', res.data);
     yield put({type: 'SET_TRANSACTION', payload: res.data});
   } catch (err) {
     alert('error getting Transaction');

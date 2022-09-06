@@ -57,6 +57,19 @@ function Transactions(props) {
       <Card style={{width: '20rem'}}>
         <Card.Body key={expense.id} className="expenseDiv">
           <Card.Title>{expense.description}</Card.Title>
+          <div style={{float: 'right'}}>
+            <Button
+              className="btn btn-secondary btn-sm"
+              onClick={() => expenseEdit(expense)}>
+              Edit
+            </Button>
+            {'  '}
+            <Button
+              className="btn btn-danger btn-sm"
+              onClick={() => expenseDelete(expense)}>
+              Delete
+            </Button>
+          </div>
           <Card.Subtitle className="mb-2 text-muted">
             <Moment format="MM/DD/YYYY">{expense.date}</Moment>
           </Card.Subtitle>
@@ -66,18 +79,6 @@ function Transactions(props) {
               minimumFractionDigits: 2,
             })}
           </Card.Text>
-
-          <Button
-            className="btn btn-secondary btn-sm"
-            onClick={() => expenseEdit(expense)}>
-            Edit
-          </Button>
-          {'  '}
-          <Button
-            className="btn btn-danger btn-sm"
-            onClick={() => expenseDelete(expense)}>
-            Delete
-          </Button>
         </Card.Body>
       </Card>
     );
