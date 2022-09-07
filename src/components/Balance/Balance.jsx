@@ -62,15 +62,15 @@ function Balance() {
   return (
     <div>
       <div>
-        <h2>Total Income:</h2>
+        <h2>Current Balance:</h2>
         <h3>
           $ {totalIncome.toLocaleString(undefined, {minimumFractionDigits: 2})}
         </h3>
       </div>
-      <div>
+      {/* <div>
         <h2>Total Expense:</h2>
         <h3>$ -{totalExpense}</h3>
-      </div>
+      </div> */}
     </div>
   );
 }
